@@ -13,14 +13,17 @@ class Page(object):
 
     @property
     def start_data(self):
+        # 用于计算当前页面显示数据的起点
         return (self.current_page - 1) * self.data_num_per_page
 
     @property
     def end_data(self):
+        # 用于计算当前页面显示数据的起点
         return self.current_page * self.data_num_per_page
 
     @property
     def total_page_num(self):
+        # 用于计算所有数据需要的页码数
         total_page_num, rest = divmod(self.total_data, self.data_num_per_page)
         if rest:
             return total_page_num + 1
@@ -29,6 +32,7 @@ class Page(object):
 
     @property
     def page_str(self):
+        # 用于生成页码标签的html
         page_list = []
         start_page = self.current_page - (self.page_num - 1) / 2
         end_page = self.current_page + (self.page_num - 1) / 2 + 1
