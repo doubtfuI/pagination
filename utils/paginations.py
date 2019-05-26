@@ -3,6 +3,7 @@ from django.utils.safestring import mark_safe
 
 # 使用跳转需要在jQuery下导入 '/static/page_jump.js'
 # 默认url为 '/url-1'
+# 实例化参数-current_page：当前页；total_data：所有的数据；url：url地址；data_num_per_page：每页显示的数据量；page_num：一次显示的页码数
 class Page(object):
     def __init__(self, current_page, total_data, url, data_num_per_page=10, page_num=7):
         self.current_page = current_page
