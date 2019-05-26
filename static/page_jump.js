@@ -1,3 +1,4 @@
+// 用于获取输入的页码和url并跳转
 $(function () {
     $('#page_jump_tag').click(function () {
         var page_num = $(this).prev().val();
@@ -6,6 +7,5 @@ $(function () {
         var a = rep.exec(default_url);
         var url = a[1] + '-' + page_num + '.html';
         location.replace(url);
-        return false
     });
 });
