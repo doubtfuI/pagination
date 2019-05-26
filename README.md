@@ -22,7 +22,7 @@ total_data = len(data_list)  # 总数据长度
 current_page = kwargs.get('page', 1)
 current_page = int(current_page)
 # 分页
-page_obj = paginations.Page(current_page, total_data, 'page')   # 实例化Page类
+page_obj = paginations.Page(current_page, total_data, 'page')   # 实例化Page类（实例化参数介绍在utils/pagination中）
 if current_page > page_obj.total_page_num:
     return HttpResponse('Page not found')
 page_str = page_obj.page_str    # page_str 是生成的页码的html
